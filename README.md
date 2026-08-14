@@ -20,11 +20,11 @@ Repositorio con la resolución de los trabajos prácticos de la materia **Progra
 
 ## Datos del alumno
 
-- **Apellido y nombre:** 
-- **Legajo:** 
-- **Curso / Comisión:** 
-- **Docente:** 
-- **Año:** 
+- **Apellido y nombre:** Espina Agustin
+- **Legajo:** 1229795
+- **Curso / Comisión:** Algoritmo y Estructura de Datos 1 
+- **Docente:** Mariano Daniel Francisco
+- **Año:** 2026
 
 ## Objetivo del repositorio
 
