@@ -7,22 +7,21 @@ Este directorio contiene los ejercicios correspondientes a este trabajo práctic
 
 ## Archivos incluidos
 
-| Nº | Archivo | Ejecución |
-|---:|---|---|
-| 1 | `tp05_ej01_numero_natural.py` | `python tp05_ej01_numero_natural.py` |
-| 2 | `tp05_ej02_sumar_reales.py` | `python tp05_ej02_sumar_reales.py` |
-| 3 | `tp05_ej03_nombre_mes.py` | `python tp05_ej03_nombre_mes.py` |
-| 4 | `tp05_ej04_interrupcion_ctrl_c.py` | `python tp05_ej04_interrupcion_ctrl_c.py` |
-| 5 | `tp05_ej05_raiz_cuadrada.py` | `python tp05_ej05_raiz_cuadrada.py` |
-| 6 | `tp05_ej06_buscar_con_index.py` | `python tp05_ej06_buscar_con_index.py` |
-| 7 | `tp05_ej07_adivinar_numero.py` | `python tp05_ej07_adivinar_numero.py` |
+No se encontraron archivos de ejercicios.
+
+Los archivos deben nombrarse con el formato:
+
+```text
+tp01_ej01_descripcion.py
+tp01_ej02_descripcion.py
+```
 
 ## Ejecutar un ejercicio
 
 Desde este directorio:
 
 ```bash
-python tp05_ej01_numero_natural.py
+python tp01_ej01_nombre_del_ejercicio.py
 ```
 
 ## Ejecutar el menú

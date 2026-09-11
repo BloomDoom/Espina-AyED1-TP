@@ -7,20 +7,21 @@ Este directorio contiene los ejercicios correspondientes a este trabajo práctic
 
 ## Archivos incluidos
 
-| Nº | Archivo | Ejecución |
-|---:|---|---|
-| 1 | `tp03_ej01_operaciones_matriz.py` | `python tp03_ej01_operaciones_matriz.py` |
-| 2 | `tp03_ej02_patrones_matrices.py` | `python tp03_ej02_patrones_matrices.py` |
-| 3 | `tp03_ej03_matriz_sin_repetidos.py` | `python tp03_ej03_matriz_sin_repetidos.py` |
-| 4 | `tp03_ej04_fabrica_bicicletas.py` | `python tp03_ej04_fabrica_bicicletas.py` |
-| 5 | `tp03_ej05_cine.py` | `python tp03_ej05_cine.py` |
+No se encontraron archivos de ejercicios.
+
+Los archivos deben nombrarse con el formato:
+
+```text
+tp01_ej01_descripcion.py
+tp01_ej02_descripcion.py
+```
 
 ## Ejecutar un ejercicio
 
 Desde este directorio:
 
 ```bash
-python tp03_ej01_operaciones_matriz.py
+python tp01_ej01_nombre_del_ejercicio.py
 ```
 
 ## Ejecutar el menú
