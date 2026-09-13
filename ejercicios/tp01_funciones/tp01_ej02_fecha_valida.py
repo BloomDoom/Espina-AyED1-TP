@@ -4,13 +4,15 @@ tenerse en cuenta la cantidad de días de cada mes, incluyendo los años bisiest
 Devolver True o False según la fecha sea correcta o no. Realizar también un
 programa para verificar el comportamiento de la función.'''
 
-def validar_fecha(dia : int, mes: int, anio: int) -> bool:
+def validar_fecha(fecha: tuple[int, int, int]) -> bool:
     '''Contrato: Recibe 3 int correspondientes a dia, mes y anio. Verifica que sean una fecha valida.
         Precondiciones: Primer argumento 'dia' entre 1 y 31, segundo argumento 'mes' entre 1 y 12 y tercer argumento 'anio' entre -10_000 y 10_000.
         Postcondiciones: True si la fecha es valida, False si no lo es.'''
     dias = [n for n in range(1, 32)]
     meses = [n for n in range(1, 13)]
     anios = [n for n in range(-10_000, 10_001)]
+
+    dia, mes, anio = fecha
 
     if dia not in dias or mes not in meses or anio not in anios:
         return False

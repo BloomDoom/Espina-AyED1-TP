@@ -7,15 +7,18 @@ b. Calcular la cantidad de días existentes entre dos fechas cualesquiera.'''
 
 import tp01_ej02_fecha_valida as fv
 
-def diasiguiente(dia: int, mes: int, anio: int) -> tuple[int, int, int]:
+def diasiguiente(fecha: tuple[int, int, int]) -> tuple[int, int, int]:
     '''
     Contrato:
         Esta funcion recibe una fecha valida cualquiera y devuelve la fecha siguiente.
     Precondiciones:
-        Parametros deben ser enteros en orden dia - mes - año. La fecha debe ser válida.
+        Recibe un tupla donde sus elementos deben ser enteros en orden dia - mes - año. La fecha debe ser válida.
     Postcondiciones:
         Devuelve una tupla con 3 enteros correspondiente a la fecha siguiente en orden dia - mes - año
     '''
+
+    dia, mes, anio = fecha
+
     bisiesto = fv.es_bisiesto(anio)
 
     match mes:
@@ -52,10 +55,10 @@ def sumar_dias(fecha: tuple[int, int, int], n: int) -> tuple[int, int, int]:
     '''
 
     assert n >= 0, 'Los dias a sumar debe ser 0 o mayor.'
-    assert fv.validar_fecha(*fecha), 'La fecha debe ser válida'
+    assert fv.validar_fecha(fecha), 'La fecha debe ser válida'
 
     for _ in range(n):
-        fecha = diasiguiente(*fecha)
+        fecha = diasiguiente(fecha)
     return fecha
 
 def calcular_dias_entre_fechas(fecha1: tuple[int, int, int], fecha2: tuple[int, int, int]) -> int:
@@ -68,19 +71,75 @@ def calcular_dias_entre_fechas(fecha1: tuple[int, int, int], fecha2: tuple[int, 
         Devuelve un entero correspondiente a los dias entre ambas fechas.
     '''
 
-    assert fv.validar_fecha(*fecha1) and fv.validar_fecha(*fecha2), 'Las fechas deben ser válidas'
+    assert fv.validar_fecha(fecha1) and fv.validar_fecha(fecha2), 'Las fechas deben ser válidas'
     assert fecha1[::-1] <= fecha2[::-1], 'La primer fecha debe ser menor o igual que la segunda fecha recibida como parámetro'
 
     contador = 0
 
     while fecha1 != fecha2:
-        fecha1 = diasiguiente(*fecha1)
+        fecha1 = diasiguiente(fecha1)
         contador += 1
     return contador
+
+def menu() -> None:
+    '''Menu de opciones'''
+    print('='*50)
+    print('MENU')
+    print('='*50)
+    print('1. Sumar días a una fecha')
+    print('2. Saber cuantos días hay entre 2 fechas')
+    print('0. Salir')
+
+def ingresar_fecha() -> tuple[int, int, int]:
+    '''
+    Contrato:
+        Pide al usuario que ingrese una fecha en orden dia - mes - año.
+    Precondiciones:
+        Esta función NO recibe parámetros.
+    Postcondiciones:
+        Devuelve una tupla de 3 enteros, correspondientes a dia - mes - año
+    '''
+    dia = int(input('Ingrese el dia: '))
+    mes = int(input('Ingrese el mes: '))
+    anio = int(input('Ingrese el año: '))
+    return dia, mes, anio
+
 
 def main() -> None:
     '''Programa principal'''
 
+    op = ''
+    while op != '0':
+        menu()
+        op = input('Ingrese opción: ')
+        
 
+        if op == '1':
+            fecha = ingresar_fecha()
+
+            while not fv.validar_fecha(fecha):
+                print('Ingrese una fecha válida.')
+                fecha = ingresar_fecha()
+
+            n = int(input('Ingrese los dias a sumar: '))
+            n_fecha = sumar_dias(fecha, n)
+            print(f'La fecha obtenida es {n_fecha[0]}/{n_fecha[1]}/{n_fecha[2]}')
+
+        elif op == '2':
+            fecha1 = ingresar_fecha()
+            fecha2 = ingresar_fecha()
+            
+            while not fv.validar_fecha(fecha1):
+                print('Ingrese una fecha válida.')
+                fecha1 = ingresar_fecha()
+
+            while not fv.validar_fecha(fecha2):
+                print('Ingrese una fecha válida.')
+                fecha2 = ingresar_fecha()
+
+            n = calcular_dias_entre_fechas(fecha1, fecha2)
+            print(f'Hay {n} día/s entre las fechas dadas.')
+    print('Saliendo del programa ...')
+            
 if __name__ == "__main__":
     main()
