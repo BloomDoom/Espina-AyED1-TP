@@ -21,7 +21,7 @@ def simular_peso(n: int) -> list[int]:
     Simula el peso de una naranja.
 
     Contrato:
-       - Carga enésimos numeros entre 150 y 350 simulando ser el peso de una naranja.
+        - Carga enésimos numeros entre 150 y 350 simulando ser el peso de una naranja.
     
     Precondiciones:
         - Recibe un único parámetro entero igual o mayor a cero.
@@ -32,11 +32,9 @@ def simular_peso(n: int) -> list[int]:
 
     assert n >= 0, 'No puede haber naranjas negativas :('
 
-    peso_n = [ri(150, 350) for i in range(n)]
+    return [ri(150, 350) for i in range(n)]
 
-    return peso_n
-
-def categorizar_naranjas(lista_naranjas: list[int]) -> tuple[list, list]:
+def categorizar_naranjas(lista_naranjas: list[int]) -> tuple[list[int], list[int]]: # YAGNI
     '''
     Categoriza naranjas según su peso.
     
@@ -62,19 +60,19 @@ def categorizar_naranjas(lista_naranjas: list[int]) -> tuple[list, list]:
 
     return nar, jugo
 
-def llenar_cajon(lista_naranjas: list[int]) -> tuple[list[int], int]:
+def llenar_cajon(lista_naranjas: list[int]) -> tuple[list[int], list[int]]:
     '''
     Llena cajones de naranjas donde cada 100 naranjas es un cajón, tambien se ocupa de las naranjas sobrantes y el peso de cada cajón.
     
     Contrato:
         - Recibe una cantidad de naranjas con su peso y las organiza en cajones.
-        - Devuelve una tupla donde el primer elemento es una lista de cajones llenos con su peso y el segundo el sobrante de naranjas (0-99).
+        - Devuelve una tupla donde el primer elemento es una lista de cajones llenos con su peso, y, el segundo el sobrante de naranjas (0-99).
 
     Precondiciones:
         - Recibe una lista de enteros.
 
     Postcondiciones:
-        - Una tupla de 2 elementos donde el primero es una lista de enteros y el segundo un entero.
+        - Una tupla de 2 elementos donde el primero y el segundo son una lista de enteros.
     '''
     cant_naranjas = len(lista_naranjas)
     # cajones, = cant_naranjas // 100               ### Así haría un estudiante de IaA
@@ -83,16 +81,102 @@ def llenar_cajon(lista_naranjas: list[int]) -> tuple[list[int], int]:
     lista_cajones = []
     naranjas = 0
 
-    while cajones:
+    for _ in range(cajones):
         peso_cajón = 0
         for naranja in lista_naranjas[naranjas:naranjas + 100]:
             peso_cajón += naranja
         naranjas += 100
         lista_cajones.append(peso_cajón)
-        cajones -= 1
 
-    return lista_cajones, sobrante
+    return lista_cajones, lista_naranjas[-sobrante:]
 
+
+def llenar_camion(lista_cajones: list[int]) -> tuple[list[int], list[int]]:
+    '''
+    Carga camiones con cajones de naranjas, el camión se considera cargado cuando su peso oscila entre 400kg y 500kg.
+    
+    Contrato:
+        - Necesita una lista de enteros positivos como parametro para funcionar coherentemente.
+    
+    Precondicion:
+        - Una lista de enteros con elementos.
+
+    Postcondicion:
+        - Una tupla con dos listas de enteros. La primera representa la cantidad de camiones y la segunda los cajones sobrantes.
+    '''
+    MAX_CARGA = 500000          ### 500kg es el máximo de carga de cada camión.
+    MIN_CARGA = 400000          ### 400kg es el mínimo de carga del último camión.
+
+    lista_camiones = [0]
+    i = 0                       ### Número del camión - 1.
+    cajones_en_camion = 0
+
+    for cajon in lista_cajones:
+        
+        if lista_camiones[i] + cajon <= MAX_CARGA:
+            lista_camiones[i] += cajon
+            cajones_en_camion += 1
+        elif MIN_CARGA <= lista_camiones[i] <= MAX_CARGA:
+            i += 1
+            lista_camiones.append(0)
+            cajones_en_camion = 0
+
+    if MIN_CARGA <= lista_camiones[-1] <= MAX_CARGA:
+        return lista_camiones
+    elif lista_camiones[-1] < MIN_CARGA:
+        del lista_camiones[-1]
+        cajones_sobrantes = [x for x in lista_cajones[-cajones_en_camion:]]
+
+    return lista_camiones, cajones_sobrantes
+  
 
 def main() -> None:
     '''Programa principal'''
+
+    print('='*50)
+    print('Bienvenido.')
+    print('Carga tus naranjas.')
+    print('Yo hago los números.')
+
+    while True:
+        n = int(input('Ingrese la cantidad de naranjas cosechadas en digitos: '))
+        if n >= 0:
+            break
+        print('Carga incorrecta.')
+
+    naranjas = simular_peso(n)
+    naranja_carga, naranja_jugo = categorizar_naranjas(naranjas)
+
+    print(f'Tiene {len(naranja_carga)} naranjas para cargar en los cajones.')
+    print(f'Tiene {len(naranja_jugo)} naranjas para hacer jugo.')
+    print()
+
+    cajones, naranjas_sobrantes = llenar_cajon(naranja_carga)
+
+    print(f'Hemos podido cargar {len(cajones)} cajones exitosamente.')
+    print(f'\nLe sobran {len(naranjas_sobrantes)} naranjas, ¿Quiere meterlas en un cajón?')
+    print('1. SI')
+    print('0. NO')
+    print()
+
+    while True:
+        op = int(input('Ingrese opción (1 para SI, 0 para NO): '))
+        if op == 0 or op == 1:
+            break
+        print('Ingrese una opción correcta.')
+
+    if op:
+        cajones.append(sum(naranjas_sobrantes))
+
+    camiones, cajones_sobrantes = llenar_camion(cajones)
+
+    print()
+    print(f'Se necesitan {len(camiones)} camiones para transportar la cosecha.')
+
+    if cajones_sobrantes:
+        print(f'Le sobran {len(cajones_sobrantes)} cajones.')
+    print('='*50)
+
+
+if __name__ == '__main__':
+    main()
