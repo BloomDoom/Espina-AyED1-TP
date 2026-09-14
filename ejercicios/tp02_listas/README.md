@@ -10,7 +10,7 @@ Este directorio contiene los ejercicios correspondientes a este trabajo práctic
 | Nº | Archivo | Ejecución |
 |---:|---|---|
 | 1 | `tp02_ej01_calculos_varios.py` | `python tp02_ej01_calculos_varios.py` |
-| 2 | `tp02_ej02_xxx.py` | `python tp02_ej02_xxx.py` |
+| 2 | `tp02_ej02_primer_set.py` | `python tp02_ej02_primer_set.py` |
 | 3 | `tp02_ej03_xxx.py` | `python tp02_ej03_xxx.py` |
 | 4 | `tp02_ej04_xxx.py` | `python tp02_ej04_xxx.py` |
 | 5 | `tp02_ej05_xxx.py` | `python tp02_ej05_xxx.py` |
