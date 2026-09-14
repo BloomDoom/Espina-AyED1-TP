@@ -130,7 +130,7 @@ def llenar_camion(lista_cajones: list[int]) -> tuple[list[int], list[int]]:
     return lista_camiones, cajones_sobrantes
   
 
-def main() -> None:
+def main() -> None:         ###Noto mucho YAGNI que hice.. lo mejoraré mas adelante.
     '''Programa principal'''
 
     print('='*50)
@@ -147,6 +147,7 @@ def main() -> None:
     naranjas = simular_peso(n)
     naranja_carga, naranja_jugo = categorizar_naranjas(naranjas)
 
+    print()
     print(f'Tiene {len(naranja_carga)} naranjas para cargar en los cajones.')
     print(f'Tiene {len(naranja_jugo)} naranjas para hacer jugo.')
     print()
@@ -167,6 +168,9 @@ def main() -> None:
 
     if op:
         cajones.append(sum(naranjas_sobrantes))
+        print()
+        print(f'Ahora tienes {len(cajones)} cajones de naranjas.')
+        print()
 
     camiones, cajones_sobrantes = llenar_camion(cajones)
 
@@ -175,6 +179,12 @@ def main() -> None:
 
     if cajones_sobrantes:
         print(f'Le sobran {len(cajones_sobrantes)} cajones.')
+
+    print()
+    print('Hasta la próxima cosecha.')
+    print('Gracias por confiar en mi, Adios :D')
+    print()
+
     print('='*50)
 
 
