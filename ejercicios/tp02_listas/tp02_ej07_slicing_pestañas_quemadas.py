@@ -16,17 +16,47 @@ def intercalar_elementos(lista1: list, lista2: list) -> None:
     Postcondiciones:
         - Modifica la primer lista recibida.
     """
+    print('='*100)
+    print('En esta seccion vamos a documentar el proceso profe, me queme las pestañas resolviéndolo.. ☺')
+    print()
+    print('Primero calculo la menor longitud de las 2 listas: ')
+    n  = min(len(lista1), len(lista2))  ###Busco el minimo para poder usar slicing con step y que no rompa.
+    print(n)
+    print()
 
+    print('Luego inserto n elementos en n posición para agrandar la lista y que pueda caber la rebanda de la segunda lista que se va a intercalar: ')
+    lista1[n:n] = [n] * n               ### Inserto en n posicion n cantidad de elementos sirviendo estos de contenedor de los elementos a insertar.
+    print(lista1)
+    print()
+
+    print('Luego reubico los primeros N elementos de la propia lista en posiciones pares: ')
+    lista1[:n*2:2] = lista1[:n]         ### Reacomodo los primeros n elementos de la propia lista en posiciones pares.
+    print()
+
+    print('Ahora inserto los elementos intercalables de la segunda lista:')
+    lista1[1:n*2:2] = lista2[:n]        ### Acomodo los primeros n elementos de la segunda lista en posiciones impares.
+    print(lista1)
+    print()
+
+    print('Y por último, agrego al final de la lista los elementos sobrantes de la segunda lista si los hubiera: ')
+    lista1[len(lista1):] = lista2[n:]   ### Agrego al final de la lista los elementos restantes de la segunda lista. Si no existen elementos, no se agrega nada.
+    print(lista1)
+    print('='*100)
+
+    
+def main() -> None:
+    """Programa principal."""
+
+    lista1 = [1, 3, 5, 7, 9, 10]
+    lista2 = [2, 4, 6, 8,]
+
+    print('='*100)
+    print('Listas a intercalar: ')
     print(lista1)
     print(lista2)
 
-    len1 = len(lista1)     
-    lista1[len1:] = [0 for x in lista2]     ### Primero agrando la lista para que tenga todos los slots necesarios.
-    lista1[::2] = lista1[:len1]             ### Segundo reubico los elementos de la lista en índices pares.
-    lista1[1::2] = lista2                   ### Tercero ubico los elementos de la lista a insertar en índices impares.
+    intercalar_elementos(lista1, lista2)
 
 
-    print(lista1)
-
-
-intercalar_elementos([1,3,5,7,9], [2,4,6,8,10])
+if __name__ == '__main__':
+    main()
