@@ -17,7 +17,7 @@ def intercalar_elementos(lista1: list, lista2: list) -> None:
         - Modifica la primer lista recibida.
     """
     print('='*100)
-    print('En esta seccion vamos a documentar el proceso profe, me queme las pestañas resolviéndolo.. ☺')
+    print('En esta sección vamos a documentar el proceso, me quemé las pestañas resolviéndolo.. ☺')
     print()
     print('Primero calculo la menor longitud de las 2 listas: ')
     n  = min(len(lista1), len(lista2))  ###Busco el minimo para poder usar slicing con step y que no rompa.
@@ -25,12 +25,14 @@ def intercalar_elementos(lista1: list, lista2: list) -> None:
     print()
 
     print('Luego inserto n elementos en n posición para agrandar la lista y que pueda caber la rebanda de la segunda lista que se va a intercalar: ')
-    lista1[n:n] = [n] * n               ### Inserto en n posicion n cantidad de elementos sirviendo estos de contenedor de los elementos a insertar.
+    lista1[n:n] = [None] * n               ### Inserto en n posicion n cantidad de elementos sirviendo estos de contenedor de los elementos a insertar.
     print(lista1)
     print()
 
-    print('Luego reubico los primeros N elementos de la propia lista en posiciones pares: ')
+    print('Luego reubico los primeros N elementos de la propia lista en posiciones pares, o bien el final de la lista: ')
     lista1[:n*2:2] = lista1[:n]         ### Reacomodo los primeros n elementos de la propia lista en posiciones pares.
+    print(lista1)
+    print('Índice 1, 3 y 5 son los valores originales que se pisarán mas adelante.')
     print()
 
     print('Ahora inserto los elementos intercalables de la segunda lista:')
@@ -48,7 +50,7 @@ def main() -> None:
     """Programa principal."""
 
     lista1 = [1, 3, 5, 7, 9, 10]
-    lista2 = [2, 4, 6, 8,]
+    lista2 = [2, 4, 6, 8, 11, 12, 13, 14, 15]
 
     print('='*100)
     print('Listas a intercalar: ')
