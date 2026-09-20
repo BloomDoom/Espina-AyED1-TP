@@ -11,16 +11,16 @@ Este directorio contiene los ejercicios correspondientes a este trabajo práctic
 |---:|---|---|
 | 1 | `tp02_ej01_calculos_varios.py` | `python tp02_ej01_calculos_varios.py` |
 | 2 | `tp02_ej02_primer_set.py` | `python tp02_ej02_primer_set.py` |
-| 3 | `tp02_ej03_xxx.py` | `python tp02_ej03_xxx.py` |
-| 4 | `tp02_ej04_xxx.py` | `python tp02_ej04_xxx.py` |
-| 5 | `tp02_ej05_xxx.py` | `python tp02_ej05_xxx.py` |
-| 6 | `tp02_ej06_xxx.py` | `python tp02_ej06_xxx.py` |
-| 7 | `tp02_ej07_xxx.py` | `python tp02_ej07_xxx.py` |
-| 8 | `tp02_ej08_xxx.py` | `python tp02_ej08_xxx.py` |
-| 9 | `tp02_ej09_xxx.py` | `python tp02_ej09_xxx.py` |
-| 10 | `tp02_ej10_xxx.py` | `python tp02_ej10_xxx.py` |
-| 11 | `tp02_ej11_xxx.py` | `python tp02_ej11_xxx.py` |
-| 12 | `tp02_ej12_xxx.py` | `python tp02_ej12_xxx.py` |
+| 3 | `tp02_ej03_cuadrados_por_comprension.py` | `python tp02_ej03_cuadrados_por_comprension.py` |
+| 4 | `tp02_ej04_remover_valor_lista.py` | `python tp02_ej04_remover_valor_lista.py` |
+| 5 | `tp02_ej05_usando_sorted.py` | `python tp02_ej05_usando_sorted.py` |
+| 6 | `tp02_ej06_normalizar_numeros.py` | `python tp02_ej06_normalizar_numeros.py` |
+| 7 | `tp02_ej07_slicing_pestañas_quemadas.py` | `python tp02_ej07_slicing_pestañas_quemadas.py` |
+| 8 | `tp02_ej08_lista_por_comprension.py` | `python tp02_ej08_lista_por_comprension.py` |
+| 9 | `tp02_ej09_comprension_con_if.py` | `python tp02_ej09_comprension_con_if.py` |
+| 10 | `tp02_ej10_usando_filter_lambda.py` | `python tp02_ej10_usando_filter_lambda.py` |
+| 11 | `tp02_ej11_gestion_pacientes.py` | `python tp02_ej11_gestion_pacientes.py` |
+| 12 | `tp02_ej12_socios_club.py` | `python tp02_ej12_socios_club.py` |
 
 ## Ejecutar un ejercicio
 
