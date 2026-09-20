@@ -7,21 +7,20 @@ Este directorio contiene los ejercicios correspondientes a este trabajo práctic
 
 ## Archivos incluidos
 
-No se encontraron archivos de ejercicios.
-
-Los archivos deben nombrarse con el formato:
-
-```text
-tp01_ej01_descripcion.py
-tp01_ej02_descripcion.py
-```
+| Nº | Archivo | Ejecución |
+|---:|---|---|
+| 1 | `tp03_ej01_jugando_con_la_matrix.py` | `python tp03_ej01_jugando_con_la_matrix.py` |
+| 2 | `tp03_ej02_patrones.py` | `python tp03_ej02_patrones.py` |
+| 3 | `tp03_ej03_carga_matrix.py` | `python tp03_ej03_carga_matrix.py` |
+| 4 | `tp03_ej04_fabrica_bicicletas.py` | `python tp03_ej04_fabrica_bicicletas.py` |
+| 5 | `tp03_ej05_sala_cine.py` | `python tp03_ej05_sala_cine.py` |
 
 ## Ejecutar un ejercicio
 
 Desde este directorio:
 
 ```bash
-python tp01_ej01_nombre_del_ejercicio.py
+python tp03_ej01_jugando_con_la_matrix.py
 ```
 
 ## Ejecutar el menú
