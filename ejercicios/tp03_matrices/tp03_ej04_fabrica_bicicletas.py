@@ -25,3 +25,6 @@ d. Cuál es el día más productivo, considerando todas las fábricas combinadas
 e. Crear una lista por comprensión que contenga la menor cantidad fabricada
 por cada fábrica.
 '''
+print('Pendiente. . .')
+
+import this
