@@ -42,7 +42,7 @@ def crear_matriz_cuadrada() -> list[list[int]]:
             print('Error en la carga de datos.')
 
 
-def _pedir_entero() -> int:
+def pedir_entero() -> int:
     """Se le solicita al usuario que ingrese un número entero."""
 
     while True:
@@ -70,7 +70,7 @@ def cargar_matriz_cuadrada(m: list[list[int]]) -> None:
 
     for r in m:
         for _ in range(len(m)):
-            r.append(_pedir_entero())
+            r.append(pedir_entero())
 
 
 def orden_ascendente(m: list[list[int]]) -> None:
@@ -284,22 +284,22 @@ def main() -> None:
 
         elif op == '2':
             print('Ingrese el índice de las filas a intercambiar: ')
-            intercambiar_filas(m, _pedir_entero(), _pedir_entero())
+            intercambiar_filas(m, pedir_entero(), pedir_entero())
 
         elif op == '3':
             print('Ingrese el índice de las columnas a intercambiar: ')
-            intercambiar_columnas(m, _pedir_entero(), _pedir_entero())
+            intercambiar_columnas(m, pedir_entero(), pedir_entero())
 
         elif op == '4':
             transponer_matriz(m)
 
         elif op == '5':
             print('Ingrese la fila a calcular: ')
-            print(calcular_promedio_fila(m, _pedir_entero()))
+            print(calcular_promedio_fila(m, pedir_entero()))
 
         elif op == '6':
             print('Ingrese la columna a calcular: ')
-            print(calcular_porcentaje_impares(m, _pedir_entero()))
+            print(calcular_porcentaje_impares(m, pedir_entero()))
 
         elif op == '7':
             print(simetrica_principal(m))
