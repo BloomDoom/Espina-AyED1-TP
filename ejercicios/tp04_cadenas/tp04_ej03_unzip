@@ -6,16 +6,18 @@ en posiciones impares de la clave maestra y la segunda con los dígitos ubicados
 posiciones pares. Los dígitos se numeran desde la izquierda. Ejemplo: Si clave
 maestra fuera 18293, la clave 1 sería 123 y la clave 2 sería 89.
 '''
+
+
 def main() -> None:
     """Programa principal."""
     print('='*50)
-    s = input('Ingrese un la clave intercalada: ')
+    s = input('Ingrese una clave intercalada: ')
 
-    clave_par = s[1::2]
     clave_impar = s[::2]
+    clave_par = s[1::2]
 
-    print(f'\nLa clave 1 es: {clave_par}.')
-    print(f'\nLa clave 2 es: {clave_impar}.')
+    print(f'\nLa clave 1 es: {clave_impar}.')
+    print(f'\nLa clave 2 es: {clave_par}.')
     print('='*50)
 
 
