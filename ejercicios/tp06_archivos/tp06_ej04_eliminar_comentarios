@@ -5,3 +5,5 @@ signo # (siempre que éste no se encuentre encerrado entre comillas simples o do
 bles) y que también se considera comentario a las cadenas de documentación
 (docstrings).
 """
+
+# NO HACER
