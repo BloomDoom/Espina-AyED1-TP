@@ -7,21 +7,29 @@ Este directorio contiene los ejercicios correspondientes a este trabajo práctic
 
 ## Archivos incluidos
 
-No se encontraron archivos de ejercicios.
-
-Los archivos deben nombrarse con el formato:
-
-```text
-tp01_ej01_descripcion.py
-tp01_ej02_descripcion.py
-```
+| Nº | Archivo | Ejecución |
+|---:|---|---|
+| 1 | `tp04_ej01_capicua.py` | `python tp04_ej01_capicua.py` |
+| 2 | `tp04_ej02_centrar_cadena.py` | `python tp04_ej02_centrar_cadena.py` |
+| 3 | `tp04_ej03_unzip.py` | `python tp04_ej03_unzip.py` |
+| 4 | `tp04_ej04_entero_a_romano.py` | `python tp04_ej04_entero_a_romano.py` |
+| 5 | `tp04_ej05_filtrar_palabras.py` | `python tp04_ej05_filtrar_palabras.py` |
+| 6 | `tp04_ej06_slicing_manual.py` | `python tp04_ej06_slicing_manual.py` |
+| 7 | `tp04_ej07_slicing_manual_vol2.py` | `python tp04_ej07_slicing_manual_vol2.py` |
+| 8 | `tp04_ej08_reverse_slicing.py` | `python tp04_ej08_reverse_slicing.py` |
+| 9 | `tp04_ej09_sorteando.py` | `python tp04_ej09_sorteando.py` |
+| 10 | `tp04_ej10_cambiando_palabra.py` | `python tp04_ej10_cambiando_palabra.py` |
+| 11 | `tp04_ej11_buscando_palabra.py` | `python tp04_ej11_buscando_palabra.py` |
+| 12 | `tp04_ej12_mazo_por_comprension.py` | `python tp04_ej12_mazo_por_comprension.py` |
+| 13 | `tp04_ej13_numeros_a_letras.py` | `python tp04_ej13_numeros_a_letras.py` |
+| 14 | `tp04_ej14_regex.py` | `python tp04_ej14_regex.py` |
 
 ## Ejecutar un ejercicio
 
 Desde este directorio:
 
 ```bash
-python tp01_ej01_nombre_del_ejercicio.py
+python tp04_ej01_capicua.py
 ```
 
 ## Ejecutar el menú

@@ -7,21 +7,21 @@ Este directorio contiene los ejercicios correspondientes a este trabajo práctic
 
 ## Archivos incluidos
 
-No se encontraron archivos de ejercicios.
-
-Los archivos deben nombrarse con el formato:
-
-```text
-tp01_ej01_descripcion.py
-tp01_ej02_descripcion.py
-```
+| Nº | Archivo | Ejecución |
+|---:|---|---|
+| 1 | `tp06_ej01_clasificar_nacionalidad.py` | `python tp06_ej01_clasificar_nacionalidad.py` |
+| 2 | `tp06_ej02_dividir_archivo.py` | `python tp06_ej02_dividir_archivo.py` |
+| 3 | `tp06_ej03_clasificar_alturas.py` | `python tp06_ej03_clasificar_alturas.py` |
+| 4 | `tp06_ej04_eliminar_comentarios.py` | `python tp06_ej04_eliminar_comentarios.py` |
+| 5 | `tp06_ej05_datos_a_csv.py` | `python tp06_ej05_datos_a_csv.py` |
+| 6 | `tp06_ej06_gestion_hotel.py` | `python tp06_ej06_gestion_hotel.py` |
 
 ## Ejecutar un ejercicio
 
 Desde este directorio:
 
 ```bash
-python tp01_ej01_nombre_del_ejercicio.py
+python tp06_ej01_clasificar_nacionalidad.py
 ```
 
 ## Ejecutar el menú
